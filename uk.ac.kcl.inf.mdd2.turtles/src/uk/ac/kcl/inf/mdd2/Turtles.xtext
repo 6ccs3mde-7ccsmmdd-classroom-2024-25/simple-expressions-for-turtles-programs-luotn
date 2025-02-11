@@ -61,10 +61,16 @@ Multiplication returns Expression:
 
 Primary returns Expression:
 	IntLiteral |
+	IntExpression |
+	RealLiteral |
 	"(" Addition ")"
-; 
+;
 
 IntLiteral:
 	val = INT
+;
+
+RealLiteral:
+	val = REAL
 ;
 
