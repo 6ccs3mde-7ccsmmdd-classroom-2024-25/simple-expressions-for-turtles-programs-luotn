@@ -17,7 +17,7 @@ Statement:
 ;
 
 VariableDeclaration:
-	"var" name=ID "=" value=INT
+	"var" name=ID "=" value = INT
 ;
 
 LoopStatement:
@@ -43,16 +43,16 @@ enum TurnCommand:
 ;
 
 Addition returns Expression:
-	Multiplication ({Addition.left = current} '+' right+=Multiplication)*
+	Multiplication ({Addition.left = current} '+' right += Multiplication)*
 ;
 
 Multiplication returns Expression:
-	Primary ({Multiplication.left = current} '*' right+=Primary)*
+	Primary ({Multiplication.left = current} '*' right += Primary)*
 ;
 
 Primary returns Expression:
-	IntLiteral |
 	IntExpression |
+	IntLiteral |
 	RealLiteral |
 	"(" Addition ")"
 ;
