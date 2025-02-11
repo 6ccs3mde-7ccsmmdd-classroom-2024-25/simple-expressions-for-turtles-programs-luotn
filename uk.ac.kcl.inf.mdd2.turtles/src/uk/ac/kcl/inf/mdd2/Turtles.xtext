@@ -13,7 +13,16 @@ Statement:
 	MoveStatement |
 	TurnStatement |
 	LoopStatement |
+	PenMoveStatement |
 	VariableDeclaration
+;
+
+PenMoveStatement:
+	'pen' state=PenState
+;
+
+enum PenState:
+	up | down
 ;
 
 VariableDeclaration:
@@ -27,7 +36,7 @@ LoopStatement:
 ;
 
 MoveStatement:
-	command = MoveCommand "(" steps = IntExpression ")"
+	command = MoveCommand "(" steps = Addition ")"
 ;
 
 enum MoveCommand:
@@ -35,33 +44,24 @@ enum MoveCommand:
 ;
 
 TurnStatement:
-	"turn" command = TurnCommand "by" degrees = REAL "degrees"
+	"turn" command = TurnCommand "by" degrees = Addition "degrees"
 ;
 
 enum TurnCommand:
 	left | right
 ;
 
-IntExpression:
-	val = INT |
-	var = [VariableDeclaration]
-;
-
-REAL returns ecore::EFloat hidden():
-	INT? "." INT
-;
-
 Addition returns Expression:
-	Multiplication ({Addition.left = current} '+' right += Multiplication)*
+	Multiplication ({Addition.left = current} operator+=("+"|"-") right+=Multiplication)*
 ;
 
 Multiplication returns Expression:
-	Primary ({Multiplication.left = current} "*" right += Primary)*
+	Primary ({Multiplication.left = current} operator+=("*"|"/") right+=Primary)*
 ;
 
 Primary returns Expression:
 	IntLiteral |
-	IntExpression |
+	IntVarExpression |
 	RealLiteral |
 	"(" Addition ")"
 ;
@@ -73,4 +73,12 @@ IntLiteral:
 RealLiteral:
 	val = REAL
 ;
+
+IntVarExpression:
+	var = [VariableDeclaration]
+;
+
+REAL returns ecore::EFloat hidden():
+	INT? "." INT
+; 
 
