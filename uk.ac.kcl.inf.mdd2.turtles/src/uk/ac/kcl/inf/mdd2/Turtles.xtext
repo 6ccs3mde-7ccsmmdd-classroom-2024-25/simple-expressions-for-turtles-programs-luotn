@@ -61,7 +61,7 @@ Multiplication returns Expression:
 
 Primary returns Expression:
 	IntLiteral |
-	IntVarExpression |
+	IntExpression |
 	RealLiteral |
 	"(" Addition ")"
 ;
@@ -74,7 +74,7 @@ RealLiteral:
 	val = REAL
 ;
 
-IntVarExpression:
+IntExpression:
 	var = [VariableDeclaration]
 ;
 
