@@ -21,7 +21,7 @@ VariableDeclaration:
 ;
 
 LoopStatement:
-	count = Primary "times" "do"
+	count = Addition "times" "do"
 	  statements += Statement+
 	"end"
 ;
