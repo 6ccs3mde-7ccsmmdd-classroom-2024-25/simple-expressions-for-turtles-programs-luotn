@@ -32,11 +32,7 @@
     </genClasses>
     <genClasses ecoreClass="Turtles.ecore#//TurnStatement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turtles.ecore#//TurnStatement/command"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turtles.ecore#//TurnStatement/degrees"/>
-    </genClasses>
-    <genClasses ecoreClass="Turtles.ecore#//IntExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turtles.ecore#//IntExpression/val"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Turtles.ecore#//IntExpression/var"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turtles.ecore#//TurnStatement/degrees"/>
     </genClasses>
     <genClasses ecoreClass="Turtles.ecore#//Expression"/>
     <genClasses ecoreClass="Turtles.ecore#//IntLiteral">
@@ -44,6 +40,9 @@
     </genClasses>
     <genClasses ecoreClass="Turtles.ecore#//RealLiteral">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turtles.ecore#//RealLiteral/val"/>
+    </genClasses>
+    <genClasses ecoreClass="Turtles.ecore#//IntExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Turtles.ecore#//IntExpression/var"/>
     </genClasses>
     <genClasses ecoreClass="Turtles.ecore#//Addition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turtles.ecore#//Addition/left"/>

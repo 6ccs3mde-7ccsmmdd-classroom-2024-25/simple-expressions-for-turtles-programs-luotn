@@ -13,16 +13,7 @@ Statement:
 	MoveStatement |
 	TurnStatement |
 	LoopStatement |
-	PenMoveStatement |
 	VariableDeclaration
-;
-
-PenMoveStatement:
-	'pen' state=PenState
-;
-
-enum PenState:
-	up | down
 ;
 
 VariableDeclaration:
@@ -52,11 +43,11 @@ enum TurnCommand:
 ;
 
 Addition returns Expression:
-	Multiplication ({Addition.left = current} operator+=("+"|"-") right+=Multiplication)*
+	Multiplication ({Addition.left = current} '+' right+=Multiplication)*
 ;
 
 Multiplication returns Expression:
-	Primary ({Multiplication.left = current} operator+=("*"|"/") right+=Primary)*
+	Primary ({Multiplication.left = current} '*' right+=Primary)*
 ;
 
 Primary returns Expression:
