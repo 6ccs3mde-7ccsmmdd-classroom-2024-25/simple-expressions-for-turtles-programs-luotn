@@ -52,11 +52,11 @@ REAL returns ecore::EFloat hidden():
 ; 
 
 Addition returns Expression:
-	Multiplication ({Addition.left = current} operator+=("+"|"-") right+=Multiplication)*
+	Multiplication ({Addition.left = current} '+' right += Multiplication)*
 ;
 
 Multiplication returns Expression:
-	Primary ({Multiplication.left = current} operator+=("*"|"/") right+=Primary)*
+	Primary ({Multiplication.left = current} "*" right += Primary)*
 ;
 
 Primary returns Expression:
