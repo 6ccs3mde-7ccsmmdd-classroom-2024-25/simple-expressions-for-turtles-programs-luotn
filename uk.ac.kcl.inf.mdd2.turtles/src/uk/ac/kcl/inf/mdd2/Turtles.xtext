@@ -49,7 +49,7 @@ IntExpression:
 
 REAL returns ecore::EFloat hidden():
 	INT? "." INT
-; 
+;
 
 Addition returns Expression:
 	Multiplication ({Addition.left = current} '+' right += Multiplication)*
