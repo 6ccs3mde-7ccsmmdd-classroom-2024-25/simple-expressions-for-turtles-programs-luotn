@@ -21,13 +21,13 @@ VariableDeclaration:
 ;
 
 LoopStatement:
-	count = Addition "times" "do"
+	count = IntExpression "times" "do"
 	  statements += Statement+
 	"end"
 ;
 
 MoveStatement:
-	command = MoveCommand "(" steps = Addition ")"
+	command = MoveCommand "(" steps = IntExpression ")"
 ;
 
 enum MoveCommand:
@@ -35,7 +35,7 @@ enum MoveCommand:
 ;
 
 TurnStatement:
-	"turn" command = TurnCommand "by" degrees = Addition "degrees"
+	"turn" command = TurnCommand "by" degrees = RealLiteral "degrees"
 ;
 
 enum TurnCommand:
