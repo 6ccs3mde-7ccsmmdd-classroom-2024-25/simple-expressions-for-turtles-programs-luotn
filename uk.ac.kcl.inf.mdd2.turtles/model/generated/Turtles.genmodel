@@ -35,6 +35,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turtles.ecore#//TurnStatement/degrees"/>
     </genClasses>
     <genClasses ecoreClass="Turtles.ecore#//Expression"/>
+    <genClasses ecoreClass="Turtles.ecore#//IntExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Turtles.ecore#//IntExpression/val"/>
+    </genClasses>
     <genClasses ecoreClass="Turtles.ecore#//IntLiteral">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Turtles.ecore#//IntLiteral/val"/>
     </genClasses>

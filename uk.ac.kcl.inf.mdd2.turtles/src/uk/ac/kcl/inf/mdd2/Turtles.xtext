@@ -35,7 +35,7 @@ enum MoveCommand:
 ;
 
 TurnStatement:
-	"turn" command = TurnCommand "by" degrees = Addition "degrees"
+	"turn" command = TurnCommand "by" degrees = RealLiteral "degrees"
 ;
 
 enum TurnCommand:
@@ -47,14 +47,18 @@ Addition returns Expression:
 ;
 
 Multiplication returns Expression:
-	IntExpression ({Multiplication.left = current} '*' right += IntExpression)*
+	Primary ({Multiplication.left = current} '*' right += Primary)*
 ;
 
-IntExpression returns Expression:
+Primary returns Expression:
 	IntVarExpression |
-	IntLiteral |
+	IntExpression |
 	RealLiteral |
 	"(" Addition ")"
+;
+
+IntExpression:
+	val = IntLiteral
 ;
 
 IntLiteral:
