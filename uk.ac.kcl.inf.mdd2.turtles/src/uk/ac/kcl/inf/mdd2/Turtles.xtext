@@ -17,7 +17,7 @@ Statement:
 ;
 
 VariableDeclaration:
-	"var" name=ID "=" value = INT
+	"var" name = ID "=" value = INT
 ;
 
 LoopStatement:
@@ -47,11 +47,11 @@ Addition returns Expression:
 ;
 
 Multiplication returns Expression:
-	Primary ({Multiplication.left = current} '*' right += Primary)*
+	IntExpression ({Multiplication.left = current} '*' right += IntExpression)*
 ;
 
-Primary returns Expression:
-	IntExpression |
+IntExpression returns Expression:
+	IntVarExpression |
 	IntLiteral |
 	RealLiteral |
 	"(" Addition ")"
@@ -65,7 +65,7 @@ RealLiteral:
 	val = REAL
 ;
 
-IntExpression:
+IntVarExpression:
 	var = [VariableDeclaration]
 ;
 

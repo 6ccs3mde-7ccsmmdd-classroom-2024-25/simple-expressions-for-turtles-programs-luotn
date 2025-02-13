@@ -3,7 +3,6 @@
  */
 package uk.ac.kcl.inf.mdd2;
 
-
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
  */
