@@ -61,8 +61,8 @@ IntExpression:
 	val = IntLiteral
 ;
 
-IntLiteral:
-	val = INT
+IntLiteral returns IntExpression:
+	var = INT
 ;
 
 RealLiteral:
