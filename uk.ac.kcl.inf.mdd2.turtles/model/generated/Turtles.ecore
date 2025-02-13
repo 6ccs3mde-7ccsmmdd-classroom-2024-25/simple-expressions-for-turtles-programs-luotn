@@ -27,7 +27,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TurnStatement" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="command" eType="#//TurnCommand"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="degrees" eType="#//RealLiteral"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="degrees" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TurnCommand">
